@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banner_image {
+  width: 100%;
+  height: 700px;
+  clip-path: polygon(0% 40%, 0% 0%, 100% 0%, 100% 40%, 68% 54%, 32% 54%);
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -10;
+}
+
+.label_field {
+  transition: .3s ease-in-out;
+}
+
+.input_field {
+  outline: none;
+}
+
+.input_field:focus {
+  outline: none;
+}
+
+.input_field:focus+.label_field,
+.label_field.filled {
+  font-size: .85em;
+  top: -3px;
+  color: #333;
+}
+
+.Suggestion_list.focused {
+  background-color: #f0f0f0;
+  color: #188920;
+  font-weight: bold;
+}
+
+.tab.tab-active:not(.tab-disabled):not([disabled]),
+.tab:is(input:checked) {
+  background: lightgrey;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  color: #188920;
+}
+
+button.btn-minus {
+  margin-right: 5px;
+  margin-left: 5px;
+  background: #a39f9f;
+  border-radius: 25px;
+  padding: 5px;
+  color: white;
+}
+
+button.btn-plus {
+  margin-right: 5px;
+  margin-left: 5px;
+  background: #188920;
+  border-radius: 25px;
+  padding: 5px;
+  color: white;
+}
+
+.react-datepicker {
+  display: flex !important;
+  /* Set calendar container to flex */
+  flex-direction: row !important;
+  /* Set flex direction to row */
+}
