@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const DatePickFromCalendar = ({ LabelName, width, setDate }) => {
+const DatePickFromCalendarforReturn = ({ LabelName, width, setReturnDate }) => {
     const [startDate, setStartDate] = useState(null);
 
     const handleDateChange = date => {
@@ -17,7 +17,7 @@ const DatePickFromCalendar = ({ LabelName, width, setDate }) => {
         const formattedDate = yyyy + '-' + mm + '-' + dd;
         console.log(formattedDate);
         setStartDate(date);
-        setDate(formattedDate);
+        setReturnDate(formattedDate);
     };
 
     return (
@@ -38,4 +38,4 @@ const DatePickFromCalendar = ({ LabelName, width, setDate }) => {
     );
 };
 
-export default DatePickFromCalendar;
+export default DatePickFromCalendarforReturn;

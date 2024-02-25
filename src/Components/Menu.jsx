@@ -8,7 +8,7 @@ const Menu = () => {
         return location.pathname === pathname ? 'tab tab-active [--tab-bg:#e7fddc] [--tab-text-color: #188920]' : 'tab';
     };
     return (
-        <div className=' bg-white'>
+        <div className=' bg-white z-10'>
             <div role="tablist" className="tabs w-[400px]">
                 <Link to="/" role="tab" className={ isActive('/') }>One-Way</Link>
                 <Link to="/round_trip" role="tab" className={ isActive('/round_trip') }>Round-trip</Link>

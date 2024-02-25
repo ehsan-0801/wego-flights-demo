@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "222f3832-f13e-457e-8367-35cdfc2173c2",
+		"name": "ZZ-Developer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8711475",
+		"_collection_link": "https://crimson-meadow-611413.postman.co/workspace/GTRSystem~8b2e73d9-49a6-429c-b365-744ac8c4bf7a/collection/8711475-222f3832-f13e-457e-8367-35cdfc2173c2?action=share&source=collection_link&creator=8711475"
+	},
+	"item": [
+		{
+			"name": "Flight",
+			"item": [
+				{
+					"name": "Search - OneWay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							},
+							{
+								"key": "secretecode",
+								"value": "{{secretecode}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"journey_type\": \"OneWay\", // OneWay, RoundTrip, MultiCity\n    \"segment\": [\n        {\n            \"departure_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"departure_airport\": \"DAC\",\n            \"arrival_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"arrival_airport\": \"JED\",\n            \"departure_date\": \"2024-05-20\"\n        }\n    ],\n    \"travelers_adult\": 1,\n    \"travelers_child\": 0,\n    \"travelers_child_age\": 0,\n    \"travelers_infants\": 0,\n    \"travelers_infants_age\": [\n        \"\"\n    ],\n    \"preferred_carrier\": [\n        null\n    ],\n    \"non_stop_flight\": \"any\", // any or non-stop,\n    \"baggage_option\": \"any\", // any or only-baggage\n    \"booking_class\": \"Economy\", // Economy , Premium-Economy, Business, First-Class\n    \"supplier_uid\": \"all\", //all\n    \"partner_id\": \"\", //ftm_partner_id / mark blank\n    \"language\": \"en\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/flight/search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"flight",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search - Roudtrip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							},
+							{
+								"key": "secretecode",
+								"value": "{{secretecode}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"journey_type\": \"RoundTrip\", // OneWay, RoundTrip, MultiCity\n    \"segment\": [\n        {\n            \"departure_airport_type\": \"CITY\", // CITY or AIRPORT\n            \"departure_airport\": \"RUH\",\n            \"arrival_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"arrival_airport\": \"JED\",\n            \"departure_date\": \"2023-12-20\",\n            \"arrival_date\": \"2023-12-30\" // Only For RoundTrip\n        }\n    ],\n    \"travelers_adult\": 1,\n    \"travelers_child\": 0,\n    \"travelers_child_age\": 0,\n    \"travelers_infants\": 0,\n    \"travelers_infants_age\": [\n        \"\"\n    ],\n    \"preferred_carrier\": [\n        null\n    ],\n    \"non_stop_flight\": \"any\", // any or non-stop,\n    \"baggage_option\": \"any\", // any or only-baggage\n    \"booking_class\": \"Economy\", // Economy , Premium-Economy, Business, First-Class\n    \"supplier_uid\": \"all\", //all\n    \"partner_id\": \"\", //ftm_partner_id / mark blank\n    \"language\": \"en\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/flight/search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"flight",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search - Multicity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "apikey",
+								"value": "{{apikey}}",
+								"type": "text"
+							},
+							{
+								"key": "secretecode",
+								"value": "{{secretecode}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"journey_type\": \"MultiCity\",\n    \"segment\": [\n        {\n            \"departure_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"departure_airport\": \"RUH\",\n            \"arrival_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"arrival_airport\": \"JED\",\n            \"departure_date\": \"2023-12-20\"\n        },\n        {\n            \"departure_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"departure_airport\": \"JED\",\n            \"arrival_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"arrival_airport\": \"AHB\",\n            \"departure_date\": \"2023-12-22\"\n        },\n        {\n            \"departure_airport_type\": \"CITY\", // CITY or AIRPORT\n            \"departure_airport\": \"AHB\",\n            \"arrival_airport_type\": \"AIRPORT\", // CITY or AIRPORT\n            \"arrival_airport\": \"JED\",\n            \"departure_date\": \"2023-12-25\"\n        }\n    ],\n    \"travelers_adult\": 1,\n    \"travelers_child\": 0,\n    \"travelers_child_age\": 0,\n    \"travelers_infants\": 0,\n    \"travelers_infants_age\": [\n        \"\"\n    ],\n    \"preferred_carrier\": [\n        null\n    ],\n    \"non_stop_flight\": \"any\", // any or non-stop,\n    \"baggage_option\": \"any\", // any or only-baggage\n    \"booking_class\": \"Economy\", // Economy , Premium-Economy, Business, First-Class\n    \"supplier_uid\": \"all\", //all\n    \"partner_id\": \"\", //ftm_partner_id / mark blank\n    \"language\": \"en\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/flight/search",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"flight",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://devapi.innotraveltech.com",
+			"type": "string"
+		},
+		{
+			"key": "apikey",
+			"value": "ITT88534696524514",
+			"type": "string"
+		},
+		{
+			"key": "secretecode",
+			"value": "BOUINpK3g7kUI9TJ9eVgaK8l1stXNzz4YC5KiOBotf9",
+			"type": "string"
+		}
+	]
+}
